@@ -2,8 +2,7 @@ from pyspark.sql import *
 import re
 from collections import Counter
 from pyspark.sql.functions import col
-from Functions.DataType_detection import type_Detection
-from Functions.Field_name_validation import fieldNameValidation
+from Functions import type_Detection, fieldNameValidation
 
 inferred_types = {}
 
