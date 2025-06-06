@@ -1,4 +1,4 @@
-# 📊 Dynamic DataType Detector using PySpark
+# 📊 Dynamic DataType Detector
 
 ## 📌 Description  
 This project accepts an input file in **CSV**, **JSON**, or **Parquet** format and reads it into a **PySpark DataFrame**. It performs:  
