@@ -37,7 +37,7 @@ user_query = input(" Now I can able to answer you question ..")
 query_vector =  vector_embedding(user_query,model,genai)
 
 #retrive schema from the db :
-expected_Schema = vector_query(query_vect,collection)['documents'][0]
+expected_Schema = vector_query(query_vector,collection)['documents'][0]
 
 #return the sql query :
 sql = sqlquery_generator(expected_Schema,query_vector,genai)
