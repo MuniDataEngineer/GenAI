@@ -2,6 +2,7 @@ import google.generativeai as genai
 import chromadb
 from chromadb.config import Settings
 from functions import *
+from schema_list import schema
 
 #configuring vectordb:
 client = chromadb.PersistentClient(path="./chroma_schema_db")
@@ -17,6 +18,7 @@ genai.configure(api_key="AIzaSyCiKNqLHhE9Fp7nvJawP4J5AG3ZbJSFOx4")
 model = 'models/embedding-001'
 
 #schema:
+schema = schema
 
 #schema into vectors:
 schema_vect = vector_embedding(schema,model,genai)
