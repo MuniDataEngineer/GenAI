@@ -1,1 +1,1 @@
-!pip install chromadb google-generativeai
+pip install chromadb google-generativeai
