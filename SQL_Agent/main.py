@@ -40,7 +40,7 @@ query_vector =  vector_embedding(user_query,model,genai)
 expected_Schema = vector_query(query_vector,collection)['documents'][0]
 
 #return the sql query :
-sql = sqlquery_generator(expected_Schema,query_vector,genai)
+sql = sqlquery_generator(expected_Schema,user_query,genai)
 
 print(sql)
 
