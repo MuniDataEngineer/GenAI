@@ -12,7 +12,7 @@ collection = client.get_or_create_collection(name="schema_collection")  #you can
 API_KEY = input("Paste your Gemini API key here..")
 
 #configure gemini with API key:
-genai.configure(api_key="AIzaSyCiKNqLHhE9Fp7nvJawP4J5AG3ZbJSFOx4")
+genai.configure(api_key=API_KEY)
 
 #model(embeddings):
 model = 'models/embedding-001'
