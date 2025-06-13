@@ -1,3 +1,5 @@
-schema = [    "Table: users(id, name, email)",
-    "Table: orders(order_id, user_id, amount, date)"
+schema = ["Table: CUSTOMERS(CUSTOMER_ID, FIRST_NAME, LAST_NAME, email, COUNTRY)",
+    "Table: ORDERS(ORDER_ID, CUSTOMER_ID, ORDER_DATE, TOTAL_AMOUNT)",
+    "Table: ORDER_ITEMS(ORDER_ITEM_ID, ORDER_ID, PRODUCT_ID, QUANTITY, UNIT_PRICE)",
+    "Table: PRODUCTS (PRODUCT_ID, PRODUCT_NAME, CATEGORY, PRICE, IN_STOCK)" 
 ]
