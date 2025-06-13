@@ -1,12 +1,11 @@
 import google.generativeai as genai
 import chromadb
-from chromadb.config import Settings
 from functions import *
 from schema_list import schema
 
 #configuring vectordb:
 print("Creating Chroma Database...")
-client = chromadb.PersistentClient(path="GenAI/SQL_Agent/chroma_schema_db")
+client = chromadb.PersistentClient(path="GenAI/SQL_Agent/./chroma_schema_db")
 collection = client.get_or_create_collection(name="schema_collection")  #you can change the name of the collection
 
 #Getting API key:
