@@ -1,5 +1,6 @@
+import google.generativeai as genai
 import chromadb
-from chromadb.config import Settings
+#from chromadb.config import Settings
 from functions import *
 from schema_list import schema
 
@@ -7,6 +8,14 @@ from schema_list import schema
 print("Creating Chroma Database...")
 client = chromadb.PersistentClient(path=".GenAI/SQL_Agent/chroma_schema_db")
 collection = client.get_or_create_collection(name="schema_collection")  #you can change the name of the collection
+
+#Getting API key:
+API_KEY = input("Paste your Gemini API key here..")
+
+print("Converting schema into vectors...")
+
+#configure gemini with API key:
+genai.configure(api_key=API_KEY)
 
 #model(embeddings):
 model = 'models/embedding-001'
