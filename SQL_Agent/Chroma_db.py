@@ -1,6 +1,5 @@
 import google.generativeai as genai
 import chromadb
-#from chromadb.config import Settings
 from functions import *
 from schema_list import schema
 
