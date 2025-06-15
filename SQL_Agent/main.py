@@ -4,6 +4,7 @@ import snowflake.connector
 import pandas as pd
 from functions import *
 from snowflake_connection import *
+from IPython.display import display
 
 # Load the same persistent Chroma DB
 client = chromadb.PersistentClient(path="./chroma_schema_db")
@@ -44,20 +45,23 @@ schema = input("enter your schema : \n")
 role = input("enter your role : \n")
 
 conn = connection_snowflake(user, password, account, database, schema, role)
-print("snowflake is connected. \n")
+if conn :
+  print("snowflake is connected. \n")
 
-cursor = conn.cursor()
+  cursor = conn.cursor()
 
-cursor.execute(sql_query)
-columns = [desc[0] for desc in cursor.description]
-rows = cursor.fetchall()
+  cursor.execute(sql_query)
+  columns = [desc[0] for desc in cursor.description]
+  rows = cursor.fetchall()
+  
+  df = pd.DataFrame(rows, columns=columns)
+  display(df)
 
-df = pd.DataFrame(rows, columns=columns)
-df.head()
-
-#closing the connection
-cursor.close()
-conn.close()
+  #closing the connection
+  cursor.close()
+  conn.close()
+else:
+  print("connection failed")
 
 
 
