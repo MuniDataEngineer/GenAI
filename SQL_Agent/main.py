@@ -65,11 +65,12 @@ while next:
   pd.set_option('display.max_rows', None)
   df = pd.DataFrame(rows, columns=columns)
   display(df)
-  next = input("Type 0 : close the connection\n Type 1 : to continue conversation\n")
+  next = int(input("Type 0 : close the connection\n Type 1 : to continue conversation\n"))
 
 #closing the connection
 cursor.close()
 conn.close()
+print("Connection closed.")
 
 
 
