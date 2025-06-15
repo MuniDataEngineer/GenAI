@@ -46,8 +46,8 @@ def vector_query(query_vector,collection):
   return results
 
 #generate sql from the query:
-def sqlquery_generator(retrieved_schema,query_text,genai,model):
-  llm = genai.GenerativeModel(model)
+def sqlquery_generator(retrieved_schema,query_text,genai,model_gen):
+  llm = genai.GenerativeModel(model_gen)
 
   prompt = f"""You are a SQL generator.
 
