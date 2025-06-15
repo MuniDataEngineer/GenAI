@@ -1,8 +1,12 @@
 import google.generativeai as genai
 import chromadb
-from Chroma_db import collection
 from functions import *
 
+# Load the same persistent Chroma DB
+client = chromadb.PersistentClient(path="./chroma_db")
+
+# Access the same collection by name
+collection = client.get_collection(name="schema_collection")
 
 #Getting API key:
 API_KEY = input("Paste your Gemini API key here..")
