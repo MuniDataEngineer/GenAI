@@ -2,7 +2,7 @@ import snowflake.connector
 
 # Connect to your Snowflake account
 def connection_snowflake(user,password,account,database,schema,role):
-  conn = snowflake.connector.connect(
+  return conn = snowflake.connector.connect(
       user=user,
       password=password,
       account=account,       
