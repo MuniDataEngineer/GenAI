@@ -3,3 +3,4 @@ google-generativeai
 snowflake-connector-python
 pandas
 IPython
+getpass
