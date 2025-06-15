@@ -47,9 +47,12 @@ conn = connection_snowflake(user, password, account, database, schema, role)
 print("snowflake is connected. \n")
 
 cursor = conn.cursor()
-df = pd.read_sql(sql_query, conn)
 
-# Show table
+cursor.execute(sql_query)
+columns = [desc[0] for desc in cursor.description]
+rows = cursor.fetchall()
+
+df = pd.DataFrame(rows, columns=columns)
 df.head()
 
 #closing the connection
