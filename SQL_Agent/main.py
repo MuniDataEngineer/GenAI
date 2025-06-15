@@ -4,7 +4,6 @@ import snowflake.connector
 import pandas as pd
 from functions import *
 from snowflake_connection import *
-from IPython.display import display
 
 # Load the same persistent Chroma DB
 client = chromadb.PersistentClient(path="./chroma_schema_db")
@@ -54,8 +53,9 @@ if conn :
   columns = [desc[0] for desc in cursor.description]
   rows = cursor.fetchall()
   
+  pd.set_option('display.max_rows', None)
   df = pd.DataFrame(rows, columns=columns)
-  display(df)
+  df
 
   #closing the connection
   cursor.close()
