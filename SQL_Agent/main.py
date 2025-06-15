@@ -3,7 +3,7 @@ import chromadb
 import snowflake.connector
 import pandas as pd
 from functions import *
-from snowflake import *
+from snowflake_connection import *
 
 # Load the same persistent Chroma DB
 client = chromadb.PersistentClient(path="./chroma_schema_db")
