@@ -1,6 +1,9 @@
 import google.generativeai as genai
 import chromadb
+import snowflake.connector
+import pandas as pd
 from functions import *
+from snowflake import *
 
 # Load the same persistent Chroma DB
 client = chromadb.PersistentClient(path="./chroma_schema_db")
@@ -31,8 +34,27 @@ query_vector =  vector_embedding(user_query,model_emb,genai)
 expected_Schema = vector_query(query_vector,collection)['documents'][0]
 
 #return the sql query :
-sql = sqlquery_generator(expected_Schema,user_query,genai,model_gen)
+sql_query = sqlquery_generator(expected_Schema,user_query,genai,model_gen)
 
-print(sql)
+user = input("enter your username : \n")
+password = input("enter your password : \n")
+account = input("enter your Account Identifier : ex : qbavf-afgsr \n")
+database = input("enter your database : \n")
+schema = input("enter your schema : \n")
+role = input("enter your role : \n")
+
+conn = connection_snowflake(user, password, account, database, schema, role)
+print("snowflake is connected. \n")
+
+cursor = conn.cursor()
+df = pd.read_sql(sql_query, conn)
+
+# Show table
+df.head()
+
+#closing the connection
+cursor.close()
+conn.close()
+
 
 
