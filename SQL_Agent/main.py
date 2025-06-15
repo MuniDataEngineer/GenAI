@@ -52,5 +52,9 @@ df = pd.read_sql(sql_query, conn)
 # Show table
 df.head()
 
+#closing the connection
+cursor.close()
+conn.close()
+
 
 
