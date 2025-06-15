@@ -3,7 +3,7 @@ import chromadb
 from functions import *
 
 # Load the same persistent Chroma DB
-client = chromadb.PersistentClient(path="./chroma_db")
+client = chromadb.PersistentClient(path="./chroma_schema_db")
 
 # Access the same collection by name
 collection = client.get_collection(name="schema_collection")
