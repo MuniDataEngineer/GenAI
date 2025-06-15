@@ -2,6 +2,7 @@ import google.generativeai as genai
 import chromadb
 from functions import *
 from schema_list import schema
+from getpass import getpass
 
 #schema:
 schema = schema
@@ -10,7 +11,7 @@ schema = schema
 model = 'models/embedding-001'
 
 #Getting API key:
-API_KEY = input("Paste your Gemini API key here..")
+API_KEY = getpass("Paste your Gemini API key here..")
 
 #configure gemini with API key:
 genai.configure(api_key=API_KEY)
