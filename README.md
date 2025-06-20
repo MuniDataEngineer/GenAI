@@ -10,7 +10,7 @@ Each project is isolated in its own folder with code and documentation.
 
 ## 📂 Projects  
 Each project folder includes:
-- 📄 `main.py` or notebook file with core logic   
+- 📄 `main.py` file with a logic to start the app
 - 📘 `README.md` with project-specific documentation and setup instructions
 
 📫 Contact
