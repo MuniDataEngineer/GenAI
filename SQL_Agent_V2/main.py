@@ -3,6 +3,7 @@ from schema_list import schema
 from chroma_db import create_vector_store
 from langgraph_orchestration import orchestration
 from IPython.display import Image, display
+from nodes import snow_conn 
 import os
 
 
@@ -32,7 +33,12 @@ while True:
   print("\n")
   print(result["generated_sql"])      # See the generated SQL
   print("\n")
-  print(result["query_result"])       # Final result from Snowflake
+  print(result["query_result"])# Final result from Snowflake
+
+  cl = input("Type Yes if you want close the chat")
+  if cl == 'Yes':
+    snow_conn.close()
+    break
   
 
 
