@@ -1,5 +1,6 @@
 from langchain_core.prompts import PromptTemplate
 from langchain_google_genai import ChatGoogleGenerativeAI
+import os
 
 chat_model = ChatGoogleGenerativeAI(model="gemini-2.0-flash",google_api_key= os.environ["GOOGLE_API_KEY"])
 
