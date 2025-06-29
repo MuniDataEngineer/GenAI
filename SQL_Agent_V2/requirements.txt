@@ -1,8 +1,0 @@
-langchain-google-genai
-langchain-chroma
-langchain-core
-langgraph
-snowflake-connector-python
-pandas
-IPython
-getpass

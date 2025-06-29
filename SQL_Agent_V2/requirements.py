@@ -1,0 +1,1 @@
+!pip install langchain-google-genai langchain-chroma langchain-core snowflake-connector-python langgraph
