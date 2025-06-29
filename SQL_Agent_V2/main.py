@@ -18,17 +18,20 @@ vector_store = create_vector_store(schema,embedding_model)
 #langgraph compile
 graph = orchestration()
 
+print("Flow diagram below..\n")
+display(Image(graph.get_graph().draw_mermaid_png()))
+
 #Invoke the chatmodel with questions
 print("Hi there Now I can answer your question..\n")
 question = input("What Can I help you today..\n")
 
 result = graph.invoke({"question": question })
 
+print("\n")
 print(result["generated_sql"])      # See the generated SQL
-print(result["query_result"]+"\n")       # Final result from Snowflake
+print("\n")
+print(result["query_result"])       # Final result from Snowflake
 
-print("Flow diagram below..\n")
-display(Image(graph.get_graph().draw_mermaid_png()))
 
 
 
