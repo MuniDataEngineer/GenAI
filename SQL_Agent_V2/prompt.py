@@ -1,4 +1,8 @@
 from langchain_core.prompts import PromptTemplate
+from langchain_google_genai import ChatGoogleGenerativeAI
+
+chat_model = ChatGoogleGenerativeAI(model="gemini-2.0-flash",google_api_key= os.environ["GOOGLE_API_KEY"])
+
 def prompt():
   sql_prompt = PromptTemplate.from_template(
       """You are a SQL generator.
@@ -14,5 +18,5 @@ def prompt():
   
     Only output the SQL query without backticks."""
   )
-  sql_chain = sql_prompt | llm
+  sql_chain = sql_prompt | chat_model
   return sql_chain
