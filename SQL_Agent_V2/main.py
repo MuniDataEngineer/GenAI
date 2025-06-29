@@ -23,14 +23,17 @@ display(Image(graph.get_graph().draw_mermaid_png()))
 
 #Invoke the chatmodel with questions
 print("Hi there Now I can answer your question..\n")
-question = input("What Can I help you today..\n")
 
-result = graph.invoke({"question": question })
+while True:
+  question = input("Ask anything about your schema..\n")
 
-print("\n")
-print(result["generated_sql"])      # See the generated SQL
-print("\n")
-print(result["query_result"])       # Final result from Snowflake
+  result = graph.invoke({"question": question })
+
+  print("\n")
+  print(result["generated_sql"])      # See the generated SQL
+  print("\n")
+  print(result["query_result"])       # Final result from Snowflake
+  
 
 
 
