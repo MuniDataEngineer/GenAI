@@ -5,7 +5,7 @@ from prompt import prompt
 import os
 
 embedding_model = GoogleGenerativeAIEmbeddings(model="models/embedding-001", google_api_key= os.environ["GOOGLE_API_KEY"])
-snow_conn = connection(os.environ["USER"],os.environ["PASSWORD"],os.environ[""],os.environ["ACCOUNT"],os.environ["DATABASE"],os.environ["SCHEMA"],os.environ["ROLE"])
+snow_conn = connection(os.environ["USER"],os.environ["PASSWORD"],os.environ["ACCOUNT"],os.environ["DATABASE"],os.environ["SCHEMA"],os.environ["ROLE"])
 sql_chain = prompt()
 
 
