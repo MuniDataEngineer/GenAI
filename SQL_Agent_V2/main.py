@@ -2,6 +2,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from schema_list import schema 
 from chroma_db import create_vector_store
 from langgraph_orchestration import orchestration
+from IPython.display import Image, display
 import os
 
 
@@ -24,7 +25,13 @@ question = input("What Can I help you today..\n")
 result = graph.invoke({"question": question })
 
 print(result["generated_sql"])      # See the generated SQL
-print(result["query_result"])       # Final result from Snowflake
+print(result["query_result"]+"\n")       # Final result from Snowflake
+
+print("Flow diagram below..\n")
+display(Image(graph.get_graph().draw_mermaid_png()))
+
+
+
 
 
 
