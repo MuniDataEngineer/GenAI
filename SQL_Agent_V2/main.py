@@ -1,6 +1,6 @@
 from langchain_google_genai import GoogleGenerativeAIEmbeddings
 from schema_list import schema 
-from chroma_db.py import create_vector_store
+from chroma_db import create_vector_store
 from langgraph_orchestration import orchestration
 import os
 
