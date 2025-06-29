@@ -38,7 +38,7 @@ schema = schema
 vector_store = create_vector_store(schema,embedding_model) 
 
 #langgraph compile
-graph = graph
+graph = orchestration()
 
 #Invoke the chatmodel with questions
 print("Hi there Now I can answer your question..\n")
