@@ -34,7 +34,7 @@ while True:
 schema = schema
 
 #chromadb setup
-vector_store = create_vector_store(schema,generation_model) 
+vector_store = create_vector_store(schema,embedding_model) 
 
 
 
